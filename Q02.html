@@ -1,0 +1,49 @@
+<!-- Name: Sunil Kumar Sahoo -->
+<!-- Sic No: 23MMCI38 -->
+<!-- Roll No: 16 (A2) -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ass - 6 (Q-2)</title>
+</head>
+
+<body>
+    <div class="container">
+        <form action="" id="primeCheckForm">
+            <label for="number">Enter Your Number:</label>
+            <input type="text" name="number" id="number" placeholder="Enter Integer No"> <br>
+            <input type="submit" name="submit" id="submit">
+        </form>
+        <p id="result"></p>
+    </div>
+    <script src="./jquery-3.7.1.min.js"></script>
+    <script>
+        $("#primeCheckForm").submit(function (e) {
+            e.preventDefault()
+            let num = $("#number").val()
+            num = Number(num)
+
+            if (num < 2) {
+                $("#result").text("Not a Prime Number.")
+            } else {
+                let isPrime = true
+                for (let i = 2; i <= Math.sqrt(num); i++) {
+                    if (num % i == 0) {
+                        isPrime = false
+                        break
+                    }
+                }
+                if (isPrime) {
+                    $("#result").text("Prime Number.")
+                } else {
+                    $("#result").text("Not a Prime Number.")
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>
