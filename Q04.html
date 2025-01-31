@@ -1,0 +1,56 @@
+<!-- Name: Sunil Kumar Sahoo -->
+<!-- Sic No: 23MMCI38 -->
+<!-- Roll No: 16 (A2) -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ass - 6 (Q-4)</title>
+    <style>
+        ul {
+            list-style-position: inside;
+        }
+    </style>
+</head>
+
+<body>
+    <div style="margin: auto; margin-top: 100px; width: 300px; padding: 20px;">
+    <div class="container" style="text-align: center;">
+        <h2 style="text-align: center;">Product & Price</h2>
+        <form action="" id="ProductForm">
+            <label for="name">Name:</label>
+            <input type="text" name="name" id="name" placeholder="Enter Product Name"> <br><br>
+            <label for="price">Price:</label>
+            <input type="text" name="price" id="price" placeholder="Enter Price"> <br><br>
+            <input type="submit" name="submit" id="submit" value="SUBMIT">
+        </form>
+        <br>
+
+        <ul id="products" style="text-align: start;">
+
+        </ul>
+
+    </div>
+</div>
+    <script src="./jquery-3.7.1.min.js"></script>
+    <script>
+        $("#ProductForm").submit(function (e) {
+            e.preventDefault(); 
+            let productName = $("#name").val();
+            let productPrice = $("#price").val();
+            if (productName !== "" && productPrice !== "") {
+                $("#products").append(`<li>${productName} (Rs/- ${productPrice})</li>`);
+                $("#name").val("");
+                $("#price").val("");
+            } else {
+                alert("Please enter both product name and price.");
+            }
+        });
+    </script>
+
+</body>
+
+</html>
