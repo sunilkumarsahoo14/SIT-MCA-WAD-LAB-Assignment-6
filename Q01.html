@@ -1,0 +1,45 @@
+<!-- Name: Sunil Kumar Sahoo -->
+<!-- Sic No: 23MMCI38 -->
+<!-- Roll No: 16 (A2) -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ass - 6 (Q-1)</title>
+ </head>
+ <body>
+    <h1 id="h1">JavaScript</h1>
+    <h2 class="h2">jQuery is a JavaScript Library</h2>
+    <p id="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo accusamus laborum maiores vero dolorum, iure doloremque amet iste? Est odio quaerat et doloribus tempore reprehenderit enim sit, distinctio ducimus sequi at labore quis aperiam eveniet culpa recusandae, deleniti quae. Laboriosam vel impedit aliquid omnis itaque, architecto molestias, repellendus dolorum in rerum quas dolor possimus adipisci fugit ipsa quasi soluta ab quod doloribus tenetur ad voluptatum iste. Delectus earum totam soluta fuga, illo quo saepe unde porro accusamus nobis iste reiciendis quis ipsa! Repudiandae rerum quibusdam mollitia qui, reiciendis sapiente, consequatur deserunt quam, amet quia totam officiis! Eaque deleniti quam iste distinctio mollitia quod optio ullam voluptas rerum, aspernatur rem tenetur consectetur neque, accusamus ratione corporis blanditiis esse dolorum dolorem! Quaerat reiciendis eos ducimus eum dolorem voluptate, pariatur vitae ex officia aliquam esse accusamus atque minus rerum iusto a odio deserunt hic fugit architecto nam nisi. Pariatur reprehenderit vitae blanditiis deserunt, veritatis mollitia possimus, sunt exercitationem ipsum corporis ut sit omnis est ab nihil quibusdam fugit ducimus atque. Esse sed, quam ipsa vero sunt est, voluptate ex cumque, rerum error at endus, sapiente est expedita voluptatum distinctio vitae dicta dolorem minus necessitatibus! Ex ullam explicabo omnis, voluptate suscipit modi. Nulla accusamus atque molestias nihil aliquid corporis sed doloremque dolorum optio aut ipsa alias eligendi Molestiae expedita inventore ea fugit quasi dicta dolorum suscipit libero doloribus laborum omnis eius ipsum tempore esse doloremque explicabo adipisci vero, cumque similique et sequi modi unde porro id. Corrupti, corporis!</p>
+    <button id="hideData">Hide</button>
+    <button id="showData">Show</button>
+    <button id="toggleData">Toogle</button>
+    <button id="fadeOutData">Fade Out</button>
+    <button id="fadeInData">Fade In</button>
+
+    <script src="./jquery-3.7.1.min.js"></script>
+    <script>
+        // a
+        $("#h1").text("jQuery")
+        // b
+        $(".h2").css({"color":"white", "backgroundColor":"black"})
+        // c
+        $("#hideData").click(function(){
+            $("#text").hide();
+        })
+        $("#showData").click(function(){
+            $("#text").show();
+        })
+        $("#toggleData").click(function(){
+            $("#text").toggle()
+        })
+        $("#fadeOutData").click(function(){
+            $("#text").fadeOut();
+        })
+        $("#fadeInData").click(function(){
+            $("#text").fadeIn();
+        })
+    </script>
+ </body>
+ </html>
