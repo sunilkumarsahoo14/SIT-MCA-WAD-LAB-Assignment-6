@@ -1,0 +1,75 @@
+<!-- Name: Sunil Kumar Sahoo -->
+<!-- Sic No: 23MMCI38 -->
+<!-- Roll No: 16 (A2) -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dog Breeds</title>
+    <style>
+      * {
+        margin: 5px;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+      }
+      th, td {
+        border: 1px solid #ababab;
+        padding: 8px;
+        text-align: left;
+      }
+      th {
+        background-color: #d6d4d4;
+      }
+      img {
+        width: 100px;
+        height: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <table>
+      <caption>
+        <h1>Dog Breeds Information</h1>
+      </caption>
+      <thead>
+        <tr>
+          <th>Image</th>
+          <th>Name</th>
+          <th>Lifespan</th>
+          <th>Temperament</th>
+        </tr>
+      </thead>
+      <tbody id="tableBody"></tbody>
+    </table>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+      $.ajax({
+        url: "https://api.freeapi.app/api/v1/public/dogs",
+        method: "GET",
+        contentType: "application/json",
+        success: function (response) {
+          let breeds = response.data.data;
+          let breedHtml = "";
+          for (let i = 0; i < breeds.length; i++) {
+            breedHtml += `
+              <tr>
+                <td><img src="${breeds[i].image.url}" alt="${breeds[i].name}"></td>
+                <td>${breeds[i].name}</td>
+                <td>${breeds[i].life_span}</td>
+                <td>${breeds[i].temperament}</td>
+              </tr>
+            `;
+          }
+          $("#tableBody").html(breedHtml);
+        },
+        error: function (error) {
+          console.log("Error fetching data", error);
+        }
+      });
+    </script>
+  </body>
+</html>
