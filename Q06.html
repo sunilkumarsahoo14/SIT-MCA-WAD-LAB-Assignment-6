@@ -1,0 +1,47 @@
+<!-- Name: Sunil Kumar Sahoo -->
+<!-- Sic No: 23MMCI38 -->
+<!-- Roll No: 16 (A2) -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Country Dropdown with Unicode Flags</title>
+    <style>
+      * {
+        font-family: Arial, sans-serif;
+      }
+      select {
+        padding: 10px;
+        margin: 20px 0;
+        font-size: 16px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Select a Country</h1>
+    <select id="countryDropdown">
+      <option value="">--Select a Country--</option>
+    </select>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+      $.ajax({
+        url: "https://countriesnow.space/api/v0.1/countries/flag/unicode",
+        method: "GET",
+        contentType: "application/json",
+        success: function (response) {
+          const countries = response.data;
+          let dropdownHtml = "";
+          countries.forEach(country => {
+            dropdownHtml += `<option value="${country.unicodeFlag}">${country.name}</option>`;
+          });
+          $("#countryDropdown").append(dropdownHtml);
+        },
+        error: function (error) {
+          console.log("Error fetching data", error);
+        }
+      });
+    </script>
+  </body>
+</html>
